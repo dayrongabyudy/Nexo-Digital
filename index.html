@@ -1,0 +1,1548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexo Digital | Páginas web, redes y soluciones para negocios</title>
+  <meta name="description" content="Nexo Digital crea páginas web modernas, Google Business, dominios, mantenimiento, WiFi, MikroTik y soluciones digitales para pequeños negocios." />
+  <meta name="keywords" content="páginas web, diseño web, Google Business, MikroTik, WiFi para negocios, hotspot, mantenimiento web, dominios, Omaha" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-dark: #07111f;
+      --bg-darker: #030812;
+      --primary: #0b5bff;
+      --primary-2: #1398ff;
+      --teal: #00d1c2;
+      --cyan: #22d3ee;
+      --white: #ffffff;
+      --muted: #64748b;
+      --text: #0f172a;
+      --soft: #f5f8ff;
+      --line: #e2e8f0;
+      --success: #10b981;
+      --shadow: 0 22px 60px rgba(15, 23, 42, 0.12);
+      --radius: 24px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 50px;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 15px;
+      border: 1px solid transparent;
+      transition: 0.25s ease;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--primary));
+      color: white;
+      box-shadow: 0 14px 34px rgba(11, 91, 255, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 20px 42px rgba(11, 91, 255, 0.35);
+    }
+
+    .btn-outline {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(14px);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: rgba(34, 211, 238, 0.12);
+      color: #a5f3fc;
+      border: 1px solid rgba(34, 211, 238, 0.22);
+      font-weight: 800;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(3, 8, 18, 0.82);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: white;
+    }
+
+    .logo-mark {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 30% 25%, rgba(255,255,255,.3), transparent 24%),
+        linear-gradient(135deg, var(--primary), var(--teal));
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 40px rgba(0, 209, 194, 0.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo-mark::before {
+      content: "N";
+      font-size: 28px;
+      font-weight: 950;
+      color: white;
+      line-height: 1;
+      letter-spacing: -2px;
+    }
+
+    .logo-mark::after {
+      content: "";
+      position: absolute;
+      width: 72px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.35);
+      transform: rotate(-35deg);
+    }
+
+    .brand-text strong {
+      display: block;
+      font-size: 24px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-text span {
+      display: block;
+      font-size: 12px;
+      color: #a5b4fc;
+      margin-top: 3px;
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: rgba(255,255,255,0.82);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: rgba(255,255,255,.08);
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .hero {
+      min-height: 940px;
+      padding: 150px 0 80px;
+      color: white;
+      background:
+        radial-gradient(circle at 82% 20%, rgba(19, 152, 255, 0.28), transparent 34%),
+        radial-gradient(circle at 20% 20%, rgba(0, 209, 194, 0.16), transparent 32%),
+        linear-gradient(135deg, #030812 0%, #07162a 45%, #0b1220 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 85%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -100px;
+      top: 120px;
+      width: 520px;
+      height: 520px;
+      border: 1px solid rgba(34,211,238,.24);
+      border-radius: 48% 52% 44% 56%;
+      animation: floatShape 10s ease-in-out infinite;
+    }
+
+    @keyframes floatShape {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(22px) rotate(8deg); }
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(44px, 6vw, 78px);
+      line-height: .94;
+      letter-spacing: -0.065em;
+      margin-bottom: 22px;
+      font-weight: 950;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #38bdf8, #22d3ee, #00d1c2);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: #cbd5e1;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .hero-mini {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      color: #dbeafe;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .hero-mini span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 520px;
+    }
+
+    .device-card {
+      position: absolute;
+      right: 0;
+      top: 18px;
+      width: 92%;
+      min-height: 340px;
+      border-radius: 30px;
+      padding: 18px;
+      background: linear-gradient(145deg, rgba(255,255,255,.18), rgba(255,255,255,.05));
+      border: 1px solid rgba(255,255,255,.18);
+      box-shadow: 0 40px 90px rgba(0,0,0,.35);
+      backdrop-filter: blur(18px);
+    }
+
+    .browser-top {
+      height: 32px;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 0 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 99px;
+      background: rgba(255,255,255,.38);
+    }
+
+    .site-preview {
+      min-height: 275px;
+      border-radius: 22px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(3, 8, 18, .78), rgba(15, 23, 42, .45)),
+        url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=80') center/cover;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .site-preview small {
+      color: #67e8f9;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .site-preview h3 {
+      font-size: 38px;
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      max-width: 360px;
+    }
+
+    .phone-card {
+      position: absolute;
+      left: 0;
+      bottom: 28px;
+      width: 245px;
+      padding: 18px;
+      border-radius: 34px;
+      background: #020617;
+      border: 1px solid rgba(255,255,255,.2);
+      box-shadow: 0 40px 80px rgba(0,0,0,.42);
+    }
+
+    .phone-screen {
+      min-height: 340px;
+      border-radius: 24px;
+      padding: 24px 18px;
+      background: linear-gradient(160deg, #0b5bff, #07111f 64%, #00d1c2);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .phone-screen h4 {
+      font-size: 22px;
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .wifi-icon {
+      width: 72px;
+      height: 72px;
+      border-radius: 24px;
+      background: rgba(255,255,255,.16);
+      display: grid;
+      place-items: center;
+      font-size: 38px;
+      margin: 24px auto;
+    }
+
+    .floating-pill {
+      position: absolute;
+      right: 34px;
+      bottom: 42px;
+      padding: 16px 18px;
+      background: white;
+      color: #0f172a;
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 250px;
+      font-weight: 800;
+    }
+
+    .floating-pill .circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--teal));
+      display: grid;
+      place-items: center;
+      color: white;
+      flex: 0 0 auto;
+    }
+
+    .trust-bar {
+      position: relative;
+      z-index: 3;
+      margin-top: -72px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .trust-item {
+      padding: 28px;
+      display: flex;
+      gap: 15px;
+      align-items: flex-start;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child { border-right: none; }
+
+    .icon-box {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(11, 91, 255, 0.1), rgba(0, 209, 194, .12));
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      font-size: 24px;
+      flex: 0 0 auto;
+    }
+
+    .trust-item h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+    }
+
+    .trust-item p {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.45;
+    }
+
+    section {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 40px;
+      align-items: end;
+      margin-bottom: 38px;
+    }
+
+    .eyebrow {
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 10px;
+    }
+
+    .section-head h2,
+    .split-title h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 950;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 17px;
+      max-width: 620px;
+    }
+
+    .services {
+      background: linear-gradient(180deg, #ffffff 0%, var(--soft) 100%);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 30px;
+      min-height: 270px;
+      box-shadow: 0 12px 40px rgba(15, 23, 42, .05);
+      transition: .25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -80px auto;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(11,91,255,.12), transparent 70%);
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(11,91,255,.35);
+      box-shadow: var(--shadow);
+    }
+
+    .service-card h3 {
+      margin: 20px 0 10px;
+      font-size: 22px;
+      letter-spacing: -.03em;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .learn-more {
+      color: var(--primary);
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 44px;
+      align-items: start;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .benefit {
+      padding: 24px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 8px 28px rgba(15, 23, 42, .045);
+    }
+
+    .benefit h3 {
+      margin: 14px 0 6px;
+      font-size: 19px;
+    }
+
+    .benefit p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .portfolio {
+      background: #ffffff;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: white;
+      overflow: hidden;
+      box-shadow: 0 10px 34px rgba(15, 23, 42, .06);
+      transition: .25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow);
+    }
+
+    .project-thumb {
+      height: 210px;
+      padding: 28px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-thumb::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(3,8,18,.15), rgba(3,8,18,.83));
+      z-index: 1;
+    }
+
+    .project-thumb > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    .thumb-1 { background: url('https://images.unsplash.com/photo-1606577924006-27d39b132ae2?auto=format&fit=crop&w=900&q=80') center/cover; }
+    .thumb-2 { background: url('https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80') center/cover; }
+    .thumb-3 { background: url('https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=900&q=80') center/cover; }
+
+    .project-thumb h3 {
+      font-size: 27px;
+      line-height: 1;
+      letter-spacing: -.04em;
+      text-transform: uppercase;
+    }
+
+    .project-info {
+      padding: 22px;
+    }
+
+    .project-info h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .project-info p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .pricing {
+      background: linear-gradient(180deg, var(--soft), #ffffff);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .price-card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 26px;
+      padding: 34px;
+      box-shadow: 0 12px 40px rgba(15, 23, 42, .055);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card.featured {
+      border-color: rgba(11, 91, 255, .45);
+      box-shadow: 0 26px 70px rgba(11, 91, 255, .16);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured::before {
+      content: "Más solicitado";
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 7px 11px;
+      border-radius: 99px;
+      background: rgba(0, 209, 194, .12);
+      color: #047c74;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .price-card h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .price-card .desc {
+      color: var(--muted);
+      min-height: 54px;
+      margin-bottom: 22px;
+    }
+
+    .price {
+      font-size: 52px;
+      font-weight: 950;
+      letter-spacing: -.06em;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .price span {
+      font-size: 16px;
+      letter-spacing: normal;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .from {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 7px;
+    }
+
+    .features {
+      list-style: none;
+      margin: 24px 0 28px;
+      display: grid;
+      gap: 12px;
+      color: #334155;
+      font-weight: 600;
+      flex: 1;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: var(--success);
+      font-weight: 950;
+      margin-right: 9px;
+    }
+
+    .testimonials {
+      background: #ffffff;
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testimonial {
+      padding: 28px;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #ffffff, #f8fbff);
+      box-shadow: 0 10px 32px rgba(15, 23, 42, .05);
+    }
+
+    .quote {
+      font-size: 48px;
+      line-height: .7;
+      color: var(--primary);
+      opacity: .26;
+      font-weight: 950;
+    }
+
+    .testimonial p {
+      color: #334155;
+      margin-bottom: 22px;
+    }
+
+    .person {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--teal));
+      color: white;
+      display: grid;
+      place-items: center;
+      font-weight: 950;
+    }
+
+    .person strong {
+      display: block;
+      line-height: 1.1;
+    }
+
+    .person span {
+      display: block;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .contact {
+      padding: 0 0 100px;
+      background: #ffffff;
+    }
+
+    .contact-box {
+      border-radius: 34px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 90% 20%, rgba(0, 209, 194, .38), transparent 28%),
+        linear-gradient(135deg, #0b5bff, #061426 62%);
+      color: white;
+      display: grid;
+      grid-template-columns: .88fr 1.12fr;
+      gap: 32px;
+      padding: 56px;
+      position: relative;
+      box-shadow: var(--shadow);
+    }
+
+    .contact-box::after {
+      content: "";
+      position: absolute;
+      right: -120px;
+      bottom: -160px;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.18);
+    }
+
+    .contact-copy,
+    .contact-form {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-copy h2 {
+      font-size: clamp(34px, 4vw, 54px);
+      line-height: 1;
+      letter-spacing: -.055em;
+      margin-bottom: 18px;
+      font-weight: 950;
+    }
+
+    .contact-copy p {
+      color: #dbeafe;
+      margin-bottom: 26px;
+      font-size: 17px;
+    }
+
+    .contact-highlights {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .contact-highlights span {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ecfeff;
+      font-weight: 700;
+    }
+
+    .contact-form {
+      background: rgba(255,255,255,.96);
+      color: var(--text);
+      border-radius: 28px;
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,.6);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 15px 16px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      background: #f8fafc;
+      transition: .2s;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: rgba(11,91,255,.55);
+      box-shadow: 0 0 0 4px rgba(11,91,255,.08);
+      background: white;
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+      grid-column: 1 / -1;
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 14px;
+      border: 0;
+    }
+
+    .site-footer {
+      background: var(--bg-darker);
+      color: white;
+      padding: 70px 0 26px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr .8fr 1fr;
+      gap: 36px;
+      margin-bottom: 40px;
+    }
+
+    .footer-brand p {
+      color: #94a3b8;
+      margin-top: 18px;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      font-size: 16px;
+      margin-bottom: 18px;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      color: #94a3b8;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .footer-col a:hover { color: white; }
+
+    .footer-bottom {
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      justify-content: space-between;
+      color: #64748b;
+      font-size: 14px;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 30px;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, .42);
+      z-index: 999;
+      transition: .25s;
+    }
+
+    .whatsapp-float:hover {
+      transform: translateY(-3px) scale(1.03);
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav .btn {
+        display: none;
+      }
+
+      .mobile-menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .hero {
+        padding-top: 126px;
+        min-height: auto;
+      }
+
+      .hero-grid,
+      .section-head,
+      .why-grid,
+      .contact-box,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 620px;
+      }
+
+      .device-card {
+        width: 100%;
+      }
+
+      .phone-card {
+        left: 26px;
+      }
+
+      .trust-grid,
+      .services-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .testimonial-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item {
+        border-right: none;
+        border-bottom: 1px solid var(--line);
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .brand-text strong {
+        font-size: 20px;
+      }
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .device-card {
+        min-height: 290px;
+      }
+
+      .site-preview {
+        min-height: 235px;
+        padding: 24px;
+      }
+
+      .site-preview h3 {
+        font-size: 28px;
+      }
+
+      .phone-card {
+        width: 205px;
+        bottom: 10px;
+        left: 8px;
+      }
+
+      .phone-screen {
+        min-height: 280px;
+      }
+
+      .floating-pill {
+        right: 8px;
+        bottom: 0;
+        max-width: 205px;
+      }
+
+      .trust-grid,
+      .services-grid,
+      .portfolio-grid,
+      .pricing-grid,
+      .testimonial-grid,
+      .benefits,
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 74px 0;
+      }
+
+      .contact-box {
+        padding: 32px 18px;
+        border-radius: 26px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#inicio" class="brand" aria-label="Nexo Digital inicio">
+        <div class="logo-mark"></div>
+        <div class="brand-text">
+          <strong>Nexo Digital</strong>
+          <span>Web · Redes · Soporte</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#portafolio">Portafolio</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <a class="btn btn-primary" href="https://wa.me/14026779879?text=Hola%20Dayron%2C%20quiero%20una%20cotizaci%C3%B3n%20para%20mi%20negocio" target="_blank" rel="noopener">Cotizar ahora →</a>
+      <button class="mobile-menu-btn" aria-label="Abrir menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="badge">● Soluciones digitales para negocios locales</div>
+          <h1>Tu negocio necesita <span class="gradient-text">presencia digital</span> que convierta.</h1>
+          <p>Diseñamos páginas web modernas y soluciones completas para pequeños negocios: Google Business, dominios, mantenimiento, integración con WhatsApp y redes WiFi / MikroTik.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/14026779879?text=Hola%2C%20quiero%20una%20p%C3%A1gina%20web%20para%20mi%20negocio" target="_blank" rel="noopener">💬 Solicitar cotización</a>
+            <a class="btn btn-outline" href="#portafolio">Ver portafolio →</a>
+          </div>
+          <div class="hero-mini">
+            <span>✓ Diseño responsivo</span>
+            <span>✓ Dominio y publicación</span>
+            <span>✓ Soporte mensual</span>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="device-card">
+            <div class="browser-top"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+            <div class="site-preview">
+              <small>Tu negocio online</small>
+              <h3>Soluciones digitales que generan resultados.</h3>
+            </div>
+          </div>
+
+          <div class="phone-card">
+            <div class="phone-screen">
+              <div>
+                <h4>Conectividad sin límites</h4>
+                <p style="font-size:13px;color:#dbeafe;margin-top:10px;">Redes MikroTik rápidas, seguras y bien administradas.</p>
+              </div>
+              <div class="wifi-icon">⌁</div>
+              <div style="font-size:13px;color:#ecfeff;font-weight:800;">WiFi · Hotspot · Soporte</div>
+            </div>
+          </div>
+
+          <div class="floating-pill">
+            <span class="circle">↗</span>
+            <span>Más confianza, más contactos, mejor presencia.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-bar">
+      <div class="container">
+        <div class="trust-grid">
+          <div class="trust-item">
+            <div class="icon-box">✦</div>
+            <div>
+              <h4>Diseño moderno</h4>
+              <p>Sitios rápidos, limpios y preparados para teléfonos.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="icon-box">🌐</div>
+            <div>
+              <h4>Dominio y publicación</h4>
+              <p>Configuración de dominio, DNS y puesta en línea.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="icon-box">🛡</div>
+            <div>
+              <h4>Soporte mensual</h4>
+              <p>Cambios pequeños, respaldo y mantenimiento técnico.</p>
+            </div>
+          </div>
+          <div class="trust-item">
+            <div class="icon-box">📶</div>
+            <div>
+              <h4>WiFi y MikroTik</h4>
+              <p>Redes estables, hotspots y soluciones para clientes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="servicios" class="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Servicios</div>
+            <h2>Todo lo que tu negocio necesita en un solo lugar.</h2>
+          </div>
+          <p>Ayudamos a negocios locales a verse profesionales, recibir más contactos y manejar mejor su presencia digital con soluciones claras y funcionales.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon-box">🖥</div>
+            <h3>Páginas Web</h3>
+            <p>Sitios profesionales, rápidos, modernos y adaptados a celulares para que tus clientes te encuentren fácil.</p>
+            <a class="learn-more" href="#contacto">Saber más →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">🏪</div>
+            <h3>Google Business</h3>
+            <p>Configuración y optimización del perfil de Google para mejorar tu imagen cuando buscan tu negocio.</p>
+            <a class="learn-more" href="#contacto">Saber más →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">⚙️</div>
+            <h3>Mantenimiento</h3>
+            <p>Actualizaciones, cambios menores, respaldo, revisión básica y soporte mensual para tu página.</p>
+            <a class="learn-more" href="#contacto">Saber más →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">✉️</div>
+            <h3>Dominios y Correos</h3>
+            <p>Compra, conexión y administración de dominios, DNS y correos profesionales para tu negocio.</p>
+            <a class="learn-more" href="#contacto">Saber más →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">📡</div>
+            <h3>WiFi / MikroTik</h3>
+            <p>Configuración de redes empresariales, routers, acceso remoto, seguridad y control de usuarios.</p>
+            <a class="learn-more" href="#contacto">Saber más →</a>
+          </article>
+
+          <article class="service-card">
+            <div class="icon-box">🔐</div>
+            <h3>Hotspot para negocios</h3>
+            <p>Internet para clientes con portal de acceso, límites de velocidad y separación de red privada.</p>
+            <a class="learn-more" href="#contacto">Saber más →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="why">
+      <div class="container why-grid">
+        <div class="split-title">
+          <div class="eyebrow">¿Por qué elegirnos?</div>
+          <h2>Tu crecimiento es nuestra prioridad.</h2>
+          <p style="color:var(--muted);margin-top:18px;">No vendemos plantillas vacías. Creamos soluciones prácticas para negocios que necesitan verse serios, recibir mensajes y funcionar mejor.</p>
+        </div>
+
+        <div class="benefits">
+          <div class="benefit">
+            <div class="icon-box">📍</div>
+            <h3>Enfoque local</h3>
+            <p>Entendemos las necesidades de talleres, barberías, restaurantes, contratistas y servicios locales.</p>
+          </div>
+          <div class="benefit">
+            <div class="icon-box">🧩</div>
+            <h3>Soluciones a medida</h3>
+            <p>Cada negocio es diferente. Ajustamos diseño, contenido y herramientas según tu objetivo.</p>
+          </div>
+          <div class="benefit">
+            <div class="icon-box">💬</div>
+            <h3>Comunicación clara</h3>
+            <p>Explicamos cada paso sin complicaciones y te acompañamos durante el proceso.</p>
+          </div>
+          <div class="benefit">
+            <div class="icon-box">📈</div>
+            <h3>Resultados reales</h3>
+            <p>Diseños que transmiten confianza, botones de contacto claros y presencia profesional.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="portafolio" class="portfolio">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Portafolio</div>
+            <h2>Proyectos que generan confianza.</h2>
+          </div>
+          <p>Estos son ejemplos del tipo de presencia digital que podemos crear para diferentes negocios.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="project-card">
+            <div class="project-thumb thumb-1">
+              <h3>Champions Mechanical Services</h3>
+            </div>
+            <div class="project-info">
+              <h4>Champions Mechanical Services</h4>
+              <p>Sitio web corporativo para servicios mecánicos.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb thumb-2">
+              <h3>Panadería Delicias</h3>
+            </div>
+            <div class="project-info">
+              <h4>Panadería Delicias</h4>
+              <p>Demo de sitio web + Google Business para negocio local.</p>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-thumb thumb-3">
+              <h3>Clínica Dental Sonríe</h3>
+            </div>
+            <div class="project-info">
+              <h4>Clínica Dental Sonríe</h4>
+              <p>Demo de página profesional orientada a contactos.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="precios" class="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Precios simples</div>
+            <h2>Planes para cada etapa de tu negocio.</h2>
+          </div>
+          <p>Precios iniciales claros. El costo final puede variar según cantidad de páginas, funciones, textos, imágenes y necesidades técnicas.</p>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card featured">
+            <h3>Web Básica</h3>
+            <p class="desc">Página informativa profesional de hasta 5 secciones.</p>
+            <div class="from">Desde</div>
+            <div class="price">$800 <span>USD</span></div>
+            <ul class="features">
+              <li>Diseño responsivo</li>
+              <li>Botón de llamada y WhatsApp</li>
+              <li>Galería, servicios y contacto</li>
+              <li>Publicación inicial</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/14026779879?text=Hola%2C%20quiero%20cotizar%20una%20p%C3%A1gina%20web%20b%C3%A1sica" target="_blank" rel="noopener">Cotizar ahora</a>
+          </article>
+
+          <article class="price-card">
+            <h3>Mantenimiento</h3>
+            <p class="desc">Soporte mensual para mantener tu página actualizada.</p>
+            <div class="from">Desde</div>
+            <div class="price">$50 <span>USD / mes</span></div>
+            <ul class="features">
+              <li>Cambios menores</li>
+              <li>Actualizaciones básicas</li>
+              <li>Respaldo de archivos</li>
+              <li>Soporte por mensaje</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/14026779879?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20mantenimiento%20mensual" target="_blank" rel="noopener">Solicitar plan</a>
+          </article>
+
+          <article class="price-card">
+            <h3>WiFi / MikroTik</h3>
+            <p class="desc">Redes para negocios, hotspot, seguridad y administración.</p>
+            <div class="from">Según proyecto</div>
+            <div class="price">A cotizar</div>
+            <ul class="features">
+              <li>Configuración de router</li>
+              <li>WiFi para clientes</li>
+              <li>Hotspot y control de acceso</li>
+              <li>Soporte remoto</li>
+            </ul>
+            <a class="btn btn-primary" href="https://wa.me/14026779879?text=Hola%2C%20quiero%20cotizar%20una%20soluci%C3%B3n%20WiFi%20o%20MikroTik" target="_blank" rel="noopener">Solicitar asesoría</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <div class="eyebrow">Testimonios</div>
+            <h2>Lo que dicen nuestros clientes.</h2>
+          </div>
+          <p>La confianza se construye con comunicación clara, entrega responsable y soluciones que funcionan.</p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial">
+            <div class="quote">“</div>
+            <p>Nexo Digital entendió lo que necesitábamos y creó una página profesional para nuestro negocio.</p>
+            <div class="person"><div class="avatar">A</div><div><strong>Alejandro H.</strong><span>Champions Mechanical Services</span></div></div>
+          </article>
+          <article class="testimonial">
+            <div class="quote">“</div>
+            <p>La comunicación fue clara desde el principio. La página quedó moderna y fácil de usar.</p>
+            <div class="person"><div class="avatar">M</div><div><strong>María G.</strong><span>Negocio local</span></div></div>
+          </article>
+          <article class="testimonial">
+            <div class="quote">“</div>
+            <p>Excelente servicio y soporte. Recomendado para negocios que quieren verse más profesionales.</p>
+            <div class="person"><div class="avatar">C</div><div><strong>Carlos R.</strong><span>Servicios técnicos</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="contact">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-copy">
+            <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
+            <p>Escríbenos y recibe una orientación inicial. Te ayudamos a elegir la mejor solución según tu negocio.</p>
+            <div class="contact-highlights">
+              <span>⚡ Respuesta rápida</span>
+              <span>💬 Atención por WhatsApp</span>
+              <span>🧭 Asesoría clara y directa</span>
+            </div>
+            <a class="btn btn-primary" href="https://wa.me/14026779879?text=Hola%20Nexo%20Digital%2C%20quiero%20informaci%C3%B3n%20para%20mi%20negocio" target="_blank" rel="noopener">💬 Escríbenos por WhatsApp</a>
+          </div>
+
+          <form class="contact-form" action="mailto:contacto@nexodigital.com" method="post" enctype="text/plain">
+            <div class="form-grid">
+              <input type="text" name="nombre" placeholder="Nombre completo*" required>
+              <input type="email" name="correo" placeholder="Correo electrónico*" required>
+              <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp*" required>
+              <select name="servicio" required>
+                <option value="">Tipo de servicio</option>
+                <option>Página web</option>
+                <option>Google Business</option>
+                <option>Mantenimiento</option>
+                <option>WiFi / MikroTik</option>
+                <option>Otro</option>
+              </select>
+              <textarea name="mensaje" placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+            </div>
+            <button class="btn btn-primary submit-btn" type="submit">Enviar mensaje</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#inicio" class="brand">
+            <div class="logo-mark"></div>
+            <div class="brand-text"><strong>Nexo Digital</strong><span>Web · Redes · Soporte</span></div>
+          </a>
+          <p>Soluciones digitales y de redes para negocios locales que quieren crecer con tecnología confiable.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Enlaces</h4>
+          <a href="#inicio">Inicio</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#portafolio">Portafolio</a>
+          <a href="#precios">Precios</a>
+          <a href="#contacto">Contacto</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Servicios</h4>
+          <a href="#servicios">Páginas Web</a>
+          <a href="#servicios">Google Business</a>
+          <a href="#servicios">Mantenimiento</a>
+          <a href="#servicios">WiFi / MikroTik</a>
+          <a href="#servicios">Hotspot</a>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <p>WhatsApp: +1 (402) 677-9879</p>
+          <p>Email: contacto@nexodigital.com</p>
+          <p>Omaha, Nebraska</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Nexo Digital. Todos los derechos reservados.</span>
+        <span>Diseño web · Redes · Soporte digital</span>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/14026779879?text=Hola%20Nexo%20Digital%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" rel="noopener" aria-label="Enviar WhatsApp">☏</a>
+</body>
+</html>
